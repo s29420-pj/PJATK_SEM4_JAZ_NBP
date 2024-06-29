@@ -4,10 +4,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
-import pl.pjatk.marlew.jazs29420nbp.exceptions.BadRequest;
-import pl.pjatk.marlew.jazs29420nbp.exceptions.GatewayTimeout;
-import pl.pjatk.marlew.jazs29420nbp.exceptions.InternalServer;
-import pl.pjatk.marlew.jazs29420nbp.exceptions.NotFound;
+import pl.pjatk.marlew.jazs29420nbp.exceptions.Exception;
+import pl.pjatk.marlew.jazs29420nbp.exceptions.*;
 import pl.pjatk.marlew.jazs29420nbp.model.AverageExchange;
 import pl.pjatk.marlew.jazs29420nbp.model.QueryNBP;
 import pl.pjatk.marlew.jazs29420nbp.model.Rate;
@@ -42,6 +40,8 @@ public class AverageExchangeService {
             throw new InternalServer();
         } catch (HttpServerErrorException.GatewayTimeout exception) {
             throw new GatewayTimeout();
+        } catch (HttpServerErrorException | HttpClientErrorException exception) {
+            throw new Exception();
         }
     }
 
@@ -63,6 +63,8 @@ public class AverageExchangeService {
             throw new InternalServer();
         } catch (HttpServerErrorException.GatewayTimeout m) {
             throw new GatewayTimeout();
+        } catch (HttpServerErrorException | HttpClientErrorException exception) {
+            throw new Exception();
         }
     }
 }

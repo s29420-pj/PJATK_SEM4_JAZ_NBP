@@ -19,7 +19,8 @@ public class QueryNBP {
         this.rates = rates;
     }
 
-    public QueryNBP() {}
+    public QueryNBP() {
+    }
 
     public String getTable() {
         return table;

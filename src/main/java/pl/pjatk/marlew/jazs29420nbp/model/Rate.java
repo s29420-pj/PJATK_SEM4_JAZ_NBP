@@ -5,7 +5,8 @@ public class Rate {
     private String effectiveDate;
     private double mid;
 
-    public Rate() {}
+    public Rate() {
+    }
 
     public Rate(String no, String effectiveDate, double mid) {
         this.no = no;

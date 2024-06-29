@@ -27,7 +27,8 @@ public class AverageExchange {
     @Schema(description = "Data i godzina wykonanego zapytania", example = "2024-06-29T18:17:14.896992")
     private String queryDate;
 
-    public AverageExchange() {}
+    public AverageExchange() {
+    }
 
     public AverageExchange(Integer id, String valueName, String startDate, String endDate, double average, String queryDate) {
         this.id = id;

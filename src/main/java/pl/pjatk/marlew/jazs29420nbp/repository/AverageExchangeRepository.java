@@ -5,4 +5,5 @@ import org.springframework.stereotype.Repository;
 import pl.pjatk.marlew.jazs29420nbp.model.AverageExchange;
 
 @Repository
-public interface AverageExchangeRepository extends JpaRepository<AverageExchange, Integer> {}
+public interface AverageExchangeRepository extends JpaRepository<AverageExchange, Integer> {
+}
